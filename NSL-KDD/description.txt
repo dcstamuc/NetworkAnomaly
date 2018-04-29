@@ -1,0 +1,22 @@
+Datasets: 
+The NSL KDD dataset can be downloaded using the following link.
+http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html
+
+Code:
+In the code:
+kdd_train_2labels = pd.read_pickle("dataset/kdd_train_2labels.pkl")
+here "dataset/kdd_train_2labels.pkl" is the path where the file resides.
+
+In class train:
+ os.makedirs("dataset/tf_dense_only_nsl_kdd/hidden layers_{}_features count_{}".format(epochs,h,f),
+                    exist_ok = True)
+
+here "dataset/tf_dense_only_nsl_kdd/hidden layers_{}_features count_{}" is the path where to make directories and save the checkpoints.
+
+In class Hyperparameters:
+Here we can set the parameters epoch, learning rate, number of features, number of hidden layers.
+For the experiments we considered 
+epoch = 10, 20, 40, 80 #epochs = [10]
+learning_rate = 1e-2, 1e-3, 1e-4, 1e-5  #lrs = [1e-3]
+features = 25%, 50%, 75%, 100%  #feature_arr = [30, 61, 91, 122]
+hidden layers = 1, 3 #hidden_layers_arr = [1, 3]
